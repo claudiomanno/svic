@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cl.exe compila il file attivo",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
+			"args": [
+				"-g3",
+				"-Wall",
+				
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compilatore: cl.exe"
+		},
+		{
+			"type": "shell",
+			"label": "RUN",
+			"command": "C:\\MinGW\\bin\\gcc.exe -g3 -Wall \"${file}\"  -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"detail": "compilatore: cl.exe"
+		}
+
+	]
+}
